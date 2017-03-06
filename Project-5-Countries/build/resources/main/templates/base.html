@@ -11,8 +11,22 @@
     <title>Countries Of The World</title>
 </head>
 <body>
-    <a class="flags" href="/usa">
-        <img class="flags" th:src="@{/flags/usa.png}" alt="USA Flag"/>
-    </a>
+
+<form action="/" method="get">
+    Sort Countries:
+    <select name="sort" id="sort">
+        <option value="Country Name">Country Name</option>
+        <option value="Population">Population</option>
+    </select>
+    <button type="submit" id="submit" name="submit">Sort</button>
+</form>
+
+    <div th:each="country : ${countries}">
+        <h1 th:text="${country.name}"></h1>
+            <a th:href="'/detail/' + ${country.name}">
+                <img class="flags" th:src="@{'/flags/' + ${country.name} + '.png'}" alt="Flag"/>
+            </a>
+    </div>
+
 </body>
 </html>

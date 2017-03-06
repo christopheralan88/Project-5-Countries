@@ -4,12 +4,12 @@ package com.cj.countries.model;
 import java.util.Arrays;
 import java.util.List;
 
+// implements Comparable<Country>
 public class Country {
     private String name;
     private Long population;
     private String capitalCity;
     private List<String> officialLanguages;
-    //private String flagImage; // string of directory path?
 
     public Country(String name, Long population, String capitalCity, String[] officialLanguages) {
         this.name = name;
@@ -17,6 +17,14 @@ public class Country {
         this.capitalCity = capitalCity;
         this.officialLanguages = Arrays.asList(officialLanguages);
     }
+
+    /*public int compareTo(Country other) {
+        if (this.equals(other)) {
+            return 0;
+        } else {
+            return this.getName().compareTo(other.getName());
+        }
+    }*/
 
     public String getName() {
         return name;

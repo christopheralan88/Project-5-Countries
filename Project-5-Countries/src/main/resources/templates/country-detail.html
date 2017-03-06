@@ -15,7 +15,10 @@
 <h1 th:text="${country.name}"></h1>
 <h2 th:text="'Population:  ' + ${country.population}"></h2>
 <h2 th:text="'Capital City:  ' + ${country.capitalCity}"></h2>
-<h2 th:text="'Official Language(s):  ' + ${country.officialLanguages}"></h2>
+<h2>Official Language(s):</h2>
+    <ol>
+        <li th:each="language : ${country.officialLanguages}" th:text="${language}"></li>
+    </ol>
 <a class="flags" href="/usa">
     <img class="flags" th:src="@{'/flags/' + ${country.name}+ '.png'}" alt="USA Flag"/>
 </a>
