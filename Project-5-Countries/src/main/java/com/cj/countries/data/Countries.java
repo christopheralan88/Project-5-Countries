@@ -17,15 +17,6 @@ public class Countries {
             new Country("Israel", 8059000L, "Tel Aviv", new String[] {"Hebrew", "Arabic"})
     );
 
-    /*public Country getCountryByName(String name) {
-        for (Country country : COUNTRIES) {
-            if (country.getName().equals(name)) {
-                return country;
-            }
-        }
-        return null;
-    }*/
-
     public Country getCountryByName(String name) {
         return COUNTRIES.stream()
                 .filter(country -> name.equals(country.getName()))
